@@ -2,7 +2,8 @@
 
 import { Edge, Node, Position, ReactFlowProvider } from 'reactflow';
 
-import graph from '../graph_50.json'
+import graph from '../graph_50_deduped.json'
+import positions from '../graph_50_positions.json'
 
 import styles from './page.module.css';
 import Flow from '../components/Flow';
@@ -15,28 +16,18 @@ const nodeSize = {
 
 const initialNodes: Node[] = graph.subjects.map(([id, label, category, x, y], index)=>{
   // new Set(['person', 'concept', 'actor', 'technology', 'weapon', 'city','location', 'media outlet'])
-  return {id, data: {label, category}, position: {x: 0, y: index * 100}}
+  return {id, data: {label, category}, position: {x: positions[id].x * 10, y: positions[id].y * 10}}
 })
 
 const initialEdges: Edge[] = graph.relationships.map(([source, label, target], index)=>{
-  return {index, source, target, animated: true, label}
+  return {id: 'e'+source+target, source, target, animated: true, label}
 })
 
-async function fetchData(): Promise<{ nodes: Node[]; edges: Edge[] }> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ nodes: initialNodes, edges: initialEdges });
-    }, 1000);
-  });
-}
-
 export default async function App() {
-  const { nodes, edges } = await fetchData();
-
   return (
     <main className={styles.main}>
-      <ReactFlowProvider initialNodes={nodes} initialEdges={edges}>
-        <Flow nodes={nodes} edges={edges} />
+      <ReactFlowProvider initialNodes={initialNodes} initialEdges={initialEdges}>
+        <Flow nodes={initialNodes} edges={initialEdges} />
       </ReactFlowProvider>
     </main>
   );
