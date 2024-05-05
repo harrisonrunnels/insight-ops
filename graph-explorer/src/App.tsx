@@ -1,4 +1,3 @@
-'use client';
 import ELK from 'elkjs/lib/elk.bundled.js';
 import React, { useCallback } from 'react';
 import ReactFlow, {
@@ -11,9 +10,10 @@ import ReactFlow, {
   Controls,
   MiniMap,
 } from 'reactflow';
-
-import { initialNodes, initialEdges } from '../src/nodes-edges';
+import { initialNodes} from './nodes';
+import { initialEdges } from './edges';
 import 'reactflow/dist/style.css';
+import { Button } from './components/ui/button';
 
 const elk = new ELK();
 
@@ -79,29 +79,34 @@ const LayoutFlow = () => {
         fitView
       >
         <Panel position="top-right">
-          <button
-            onClick={() =>
-              getLayoutedElements({ 'elk.algorithm': 'layered', 'elk.direction': 'DOWN' })
-            }
-          >
-            vertical layout
-          </button>
-          <button
-            onClick={() =>
-              getLayoutedElements({ 'elk.algorithm': 'layered', 'elk.direction': 'RIGHT' })
-            }
-          >
-            horizontal layout
-          </button>
-          <button
-            onClick={() =>
-              getLayoutedElements({
-                'elk.algorithm': 'org.eclipse.elk.force',
-              })
-            }
-          >
-            force layout
-          </button>
+          <div className='flex gap-1'>
+            <Button
+            variant={'outline'}
+              onClick={() =>
+                getLayoutedElements({ 'elk.algorithm': 'layered', 'elk.direction': 'DOWN' })
+              }
+            >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.14998 14V1H0.849976V14H2.14998ZM6.14998 14V1H4.84998V14H6.14998ZM10.15 1V14H8.84998V1H10.15ZM14.15 14V1H12.85V14H14.15Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </Button>
+            <Button
+            variant={'outline'}
+              onClick={() =>
+                getLayoutedElements({ 'elk.algorithm': 'layered', 'elk.direction': 'RIGHT' })
+              }
+            >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 12.85L1 12.85L1 14.15L14 14.15L14 12.85ZM14 8.85002L1 8.85002L1 10.15L14 10.15L14 8.85002ZM1 4.85003L14 4.85003L14 6.15003L1 6.15002L1 4.85003ZM14 0.850025L1 0.850025L1 2.15002L14 2.15002L14 0.850025Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </Button>
+            <Button
+            variant={'outline'}
+              onClick={() =>
+                getLayoutedElements({
+                  'elk.algorithm': 'org.eclipse.elk.force',
+                })
+              }
+            >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0.75L9.75 3H5.25L7.5 0.75ZM7.5 14.25L9.75 12H5.25L7.5 14.25ZM3 5.25L0.75 7.5L3 9.75V5.25ZM14.25 7.5L12 5.25V9.75L14.25 7.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </Button>
+          </div>
         </Panel>
         <Background />
         <Controls />
