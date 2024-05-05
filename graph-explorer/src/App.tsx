@@ -1,5 +1,5 @@
 import ELK from 'elkjs/lib/elk.bundled.js';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import ReactFlow, {
   ReactFlowProvider,
   Panel,
@@ -14,6 +14,8 @@ import { initialNodes} from './nodes';
 import { initialEdges } from './edges';
 import 'reactflow/dist/style.css';
 import { Button } from './components/ui/button';
+import posts from './raw_posts_2hrs.json'
+import { Card } from './components/ui/card';
 
 const elk = new ELK();
 
@@ -54,10 +56,15 @@ const useLayoutedElements = () => {
 const LayoutFlow = () => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
+  const [popup, setPopup] = useState({open: false, post: false});
   const { getLayoutedElements } = useLayoutedElements();
 
   const onNodeClick = (event, node) => {
     console.log('Node clicked:', node);
+  };
+  const onEdgeClick = (event, edge) => {
+    console.log('Edge clicked:', edge);
+    setPopup({open: true, post: posts[edge.source.split('_')[0]]})
   };
   const onNodeMouseEnter = (event, node) => {
     console.log('Node hovered:', node);
@@ -68,9 +75,15 @@ const LayoutFlow = () => {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
+      {popup.open ? <Card>
+        <div>{popup?.post.time}</div>
+        <div>{popup?.post.translation}</div>
+        <div>Posted by: {popup?.post.name} - {popup?.post.description}</div>
+      </Card> : null}
       <ReactFlow
         nodes={nodes}
         edges={edges}
+        onEdgeClick={onEdgeClick}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onNodeMouseEnter={onNodeMouseEnter}
