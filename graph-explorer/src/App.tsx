@@ -76,6 +76,7 @@ const LayoutFlow = () => {
         onNodeMouseEnter={onNodeMouseEnter}
         onNodeMouseLeave={onNodeMouseLeave}
         onNodeClick={onNodeClick}
+        minZoom={.05}
         fitView
       >
         <Panel position="top-right">
