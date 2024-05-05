@@ -1,0 +1,183 @@
+{
+  "subjects": [
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_1",
+      "Oles Buzina",
+      "person"
+    ],
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_2",
+      "Vladimir Zhirinovsky",
+      "person"
+    ],
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_3",
+      "Duel talk show",
+      "event"
+    ],
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_4",
+      "Vladimir Solovyov",
+      "person"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_1",
+      "Russians",
+      "actor"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_2",
+      "Kharkiv region",
+      "location"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_3",
+      "152-mm self-propelled gun 2C19 'Msta-S'",
+      "weapon"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_4",
+      "Volyn",
+      "location"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_5",
+      "14th separate mechanized brigade",
+      "group"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_6",
+      "Prince Roman the Great",
+      "person"
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_7",
+      "small drone",
+      "weapon"
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_1",
+      "Ukraine",
+      "actor"
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_2",
+      "European Union",
+      "actor"
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_3",
+      "The Telegraph",
+      "actor"
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_4",
+      "extreme right-wing parties",
+      "actor"
+    ]
+  ],
+  "relationships": [
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_1",
+      "participated in",
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_3",
+      {
+        "role": "guest"
+      }
+    ],
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_2",
+      "participated in",
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_3",
+      {
+        "role": "guest"
+      }
+    ],
+    [
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_3",
+      "hosted by",
+      "0007ed21-eb78-597d-9558-9dfa4f75ed3e_4",
+      {}
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_1",
+      "located in",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_2",
+      {
+        "property": "Presence"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_1",
+      "used",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_3",
+      {
+        "property": "Utilization"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_3",
+      "equipped with",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_7",
+      {
+        "property": "Equipment"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_1",
+      "discovered by",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_5",
+      {
+        "property": "Discovery"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_5",
+      "destroyed",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_3",
+      {
+        "property": "Destruction"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_5",
+      "belongs to",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_4",
+      {
+        "property": "Affiliation"
+      }
+    ],
+    [
+      "0124953a-08ac-53d7-963b-8eacbeb43150_6",
+      "named after",
+      "0124953a-08ac-53d7-963b-8eacbeb43150_6",
+      {
+        "property": "Namesake"
+      }
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_1",
+      "faces threat from",
+      "021268ea-9135-5761-9200-34ff70d93547_3",
+      {
+        "source": "The Telegraph"
+      }
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_1",
+      "wants to join",
+      "021268ea-9135-5761-9200-34ff70d93547_2",
+      {
+        "reason": "Ukraine's accession to the EU"
+      }
+    ],
+    [
+      "021268ea-9135-5761-9200-34ff70d93547_2",
+      "may be vetoed by",
+      "021268ea-9135-5761-9200-34ff70d93547_4",
+      {
+        "reason": "opposed to supporting Ukraine"
+      }
+    ]
+  ]
+}
