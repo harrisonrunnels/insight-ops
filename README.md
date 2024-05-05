@@ -9,8 +9,8 @@ Insert the data into the main folder as the reference is "./russia_social_media.
 
 Uses the React Flow library to render the graph. https://reactflow.dev/learn
 
-Graph is represented as json in `frontend/src/graph.json`
+Graph is represented as json in `graph-explorer/src/graph.json`
 
-`cd frontend`
+`cd graph-explorer`
 `npm install`
 `npm run dev`
