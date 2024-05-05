@@ -2,7 +2,7 @@
 
 import { Edge, Node, Position, ReactFlowProvider } from 'reactflow';
 
-import graph from '../graph.json'
+import graph from '../graph_50.json'
 
 import styles from './page.module.css';
 import Flow from '../components/Flow';
@@ -14,6 +14,7 @@ const nodeSize = {
 
 
 const initialNodes: Node[] = graph.subjects.map(([id, label, category, x, y], index)=>{
+  // new Set(['person', 'concept', 'actor', 'technology', 'weapon', 'city','location', 'media outlet'])
   return {id, data: {label, category}, position: {x: 0, y: index * 100}}
 })
 

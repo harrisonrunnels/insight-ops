@@ -46,6 +46,16 @@ export default function App({
     [setEdges]
   );
 
+  const onNodeClick = (event, node) => {
+    console.log('Node clicked:', node);
+  };
+  const onNodeMouseEnter = (event, node) => {
+    console.log('Node hovered:', node);
+  };
+  const onNodeMouseLeave = (event, node) => {
+    console.log('Node left:', node);
+  };
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <ReactFlow
@@ -55,13 +65,16 @@ export default function App({
         onEdgesChange={onEdgesChange}
         onEdgesDelete={()=>{}}
         onNodesDelete={()=>{}}
+        onNodeMouseEnter={onNodeMouseEnter}
+        onNodeMouseLeave={onNodeMouseLeave}
+        onNodeClick={onNodeClick}
         onConnect={onConnect}>
         
 
         <Background />
         <Controls />
         <MiniMap />
-        </ReactFlow>
+      </ReactFlow>
     </div>
   );
 }
