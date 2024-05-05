@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "reactflow": "^11.9.4",
+    "@radix-ui/react-slot": "^1.0.2",
+    "elkjs": "latest",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "reactflow": "^11.9.4"
   },
   "devDependencies": {
     "@types/node": "^20",
