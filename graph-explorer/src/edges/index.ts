@@ -1,5 +1,6 @@
 import type { Edge, EdgeTypes } from "reactflow";
-import graph from '../graph_300.json'
+import graph from '../graph_2hrs.json'
+
 
 export const initialEdges = graph.relationships.map(([source, label, target], index)=>{
   return {id: 'e'+source+target, source, target, animated: true, label}

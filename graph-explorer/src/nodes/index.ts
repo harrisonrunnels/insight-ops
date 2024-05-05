@@ -1,9 +1,9 @@
 import type { Node, NodeTypes } from "reactflow";
 import { PositionLoggerNode } from "./PositionLoggerNode";
 import DataNode from "./DataNode";
-import graph from '../graph_300.json'
-import positions from '../graph_300_positions.json'
-import groups from '../graph_300_nodes.json'
+import graph from '../graph_2hrs.json'
+import positions from '../graph_2hrs_positions.json'
+import groups from '../graph_2hrs_nodes.json'
 import chroma from "chroma-js";
 
 function getRandomColorWithContrastOnBlack() {
